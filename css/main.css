@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark light;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  min-height: 100dvh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.box {
+  position: relative;
+  overflow: hidden;
+  width: min(300px, 100% - 2rem);
+  aspect-ratio: 1;
+  margin-top: 1rem;
+  margin-inline: auto;
+  border: 4px solid orange;
+  border-radius: 10px;
+}
+.box::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: orange;
+  --default-top: 5px;
+  --default-left: calc(100% - 20px - 5px);
+  animation: leave 500ms forwards;
+}
+@keyframes leave {
+  from {
+    top: var(--leave-top, var(--default-top));
+    left: var(--leave-left, var(--default-left));
+  }
+  to {
+    top: var(--default-top);
+    left: var(--default-left);
+  }
+}
+.box.hover::before {
+  animation: enter 500ms forwards;
+}
+@keyframes enter {
+  from {
+    top: var(--enter-top, var(--default-top));
+    left: var(--enter-left, var(--default-left));
+  }
+  to {
+    top: var(--current-top, var(--default-top));
+    left: var(--current-left, var(--default-left));
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

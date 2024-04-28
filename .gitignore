@@ -1,0 +1,5 @@
+# dependenices
+node_modules
+
+# code format
+.prettierrc

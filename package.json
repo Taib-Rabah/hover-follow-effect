@@ -1,0 +1,34 @@
+{
+  "name": "hover-follow",
+  "description": "Cool hover follow effect using HTML, CSS and JS",
+  "main": "index.html",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "live-server": "^1.2.2",
+    "sass": "^1.75.0",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:ts": "tsc",
+    "compile:sass": "sass scss:css",
+    "build": "pnpm run compile:ts && pnpm run compile:sass",
+    "dev": "concurrently \"pnpm run compile:ts --watch\" \"pnpm run compile:sass --watch\" \"live-server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Taib-Rabah/css-hover-follow.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "js",
+    "hover-effect"
+  ],
+  "author": "Taib-Rabah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Taib-Rabah/css-hover-follow/issues"
+  },
+  "homepage": "https://github.com/Taib-Rabah/css-hover-follow#readme"
+}
